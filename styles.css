@@ -24,8 +24,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-    "Helvetica Neue", sans-serif;
+  font-family: "Avenir Next", Avenir, -apple-system,
+    BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
   transition: background 0.4s ease, color 0.4s ease;
 }
@@ -65,9 +65,9 @@ body {
 }
 
 .section h2 {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   color: var(--muted);
   margin-bottom: 2rem;
 }
@@ -78,18 +78,20 @@ body {
 }
 
 .project {
+  display: block;
   padding: 1.5rem 0;
   border-bottom: 1px solid var(--border);
-  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
   transition: opacity 0.25s ease;
 }
 
 .project:hover {
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
 .project h3 {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   margin: 0;
 }
 
@@ -111,55 +113,9 @@ body {
   display: none;
 }
 
-.lightbox {
-  position: fixed;
-  inset: 0;
-  backdrop-filter: blur(20px);
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-
-.lightbox-content {
-  background: var(--bg);
-  padding: 2.5rem;
-  max-width: 500px;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-}
-
-.lightbox-content h3 {
-  margin-top: 0;
-}
-
-.lightbox-link {
-  display: inline-block;
-  margin-top: 1.5rem;
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.close {
-  position: absolute;
-  right: 2rem;
-  top: 2rem;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: var(--muted);
-  cursor: pointer;
-}
-
 footer {
   text-align: center;
   padding: 4rem 1rem;
   color: var(--muted);
   font-size: 0.9rem;
-}
-
-.no-scroll {
-  overflow: hidden;
 }

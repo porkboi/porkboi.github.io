@@ -12,8 +12,8 @@
     <h1>Christian Ang</h1>
     <p class="subtitle">Mathematical Sciences & Computer Science @ CMU</p>
     <div class="links">
-      <a href="https://github.com/porkboi" target="_blank" rel="noreferrer">GitHub</a>
-      <a href="https://cm-isomer.vercel.app/" target="_blank" rel="noreferrer">CMIsomer</a>
+      <a href="https://github.com/porkboi" target="_blank">GitHub</a>
+      <a href="https://cm-isomer.vercel.app/" target="_blank">CMIsomer</a>
       <a href="mailto:cang2@andrew.cmu.edu">Email</a>
     </div>
   </header>
@@ -32,80 +32,51 @@
     <section class="section">
       <h2>Featured Projects</h2>
 
-      <article class="project" tabindex="0"
-        data-title="CMIsomer"
-        data-description="Scalable event ticketing and scheduling platform used by 1000+ users at CMU. Built with React, PostgreSQL, and Go."
-        data-github="https://github.com/porkboi/CMIsomer">
+      <a class="project" href="https://github.com/porkboi/CMIsomer" target="_blank">
         <h3>CMIsomer</h3>
         <p>Event ticketing & scheduling platform used by 1000+ users.</p>
-      </article>
+      </a>
 
-      <article class="project" tabindex="0"
-        data-title="NASA SUITS 2026"
-        data-description="Lead Algorithm Engineer developing optimized D* Lite pathfinding and Metropolis-Hastings sampling for astronaut navigation systems."
-        data-github="https://github.com/cmunasasuits">
+      <a class="project" href="https://github.com/cmunasasuits" target="_blank">
         <h3>NASA SUITS 2026</h3>
         <p>Optimized pathfinding & probabilistic sampling for astronaut systems.</p>
-      </article>
+      </a>
 
-      <article class="project" tabindex="0"
-        data-title="ZKLib (Lean4)"
-        data-description="Implemented formally verified SNARK components in Lean4 under CMU CyLab research."
-        data-github="https://github.com/porkboi">
+      <a class="project" href="https://github.com/porkboi" target="_blank">
         <h3>ZKLib (Lean4)</h3>
         <p>Formally verified SNARK components in Lean4.</p>
-      </article>
+      </a>
     </section>
 
     <section class="section">
       <button id="toggleBtn" class="toggle">More Projects</button>
 
       <div id="moreProjects" class="hidden">
-        <article class="project" tabindex="0"
-          data-title="eSIM UART Provisioning Tool"
-          data-description="First UART provisioning tool for GSMA SGP.22/32 eSIM standards. Reverse engineered APDUs using Bus Pirate 5."
-          data-github="https://github.com/porkboi">
+
+        <a class="project" href="https://github.com/porkboi" target="_blank">
           <h3>eSIM UART Provisioning Tool</h3>
           <p>Reverse engineered APDUs & built provisioning tool.</p>
-        </article>
+        </a>
 
-        <article class="project" tabindex="0"
-          data-title="Post-Quantum Crypto"
-          data-description="Implemented Kyber-256, Fujisaki-Okamoto transforms, and m-LLL algorithm using Givens rotations."
-          data-github="https://github.com/porkboi">
+        <a class="project" href="https://github.com/porkboi" target="_blank">
           <h3>Post-Quantum Crypto</h3>
           <p>Kyber-256 & lattice algorithm implementations.</p>
-        </article>
+        </a>
 
-        <article class="project" tabindex="0"
-          data-title="Tahoe Embedding Model"
-          data-description="Custom contrastive learning loss and MiniLMv2-derived embedding model beating government baselines."
-          data-github="https://github.com/porkboi">
+        <a class="project" href="https://github.com/porkboi" target="_blank">
           <h3>Tahoe Embedding Model</h3>
           <p>Custom contrastive embedding model.</p>
-        </article>
+        </a>
 
-        <article class="project" tabindex="0"
-          data-title="Mars Architecture Thesis"
-          data-description="Mathematical modeling of efficient transport networks and modular housing layouts for Martian environments."
-          data-github="https://github.com/porkboi">
+        <a class="project" href="https://github.com/porkboi" target="_blank">
           <h3>Mars Architecture</h3>
           <p>Efficient transport network modeling for Mars.</p>
-        </article>
+        </a>
+
       </div>
     </section>
 
   </main>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox hidden">
-    <div class="lightbox-content">
-      <button id="closeLightbox" class="close">×</button>
-      <h3 id="lightboxTitle"></h3>
-      <p id="lightboxDescription"></p>
-      <a id="lightboxGithub" class="lightbox-link" target="_blank">View on GitHub</a>
-    </div>
-  </div>
 
   <footer>
     <p>© 2026 Christian Ang</p>
@@ -114,40 +85,12 @@
   <script>
     const toggleBtn = document.getElementById("toggleBtn");
     const more = document.getElementById("moreProjects");
-    const cards = document.querySelectorAll(".project");
-    const lightbox = document.getElementById("lightbox");
-    const closeBtn = document.getElementById("closeLightbox");
-    const title = document.getElementById("lightboxTitle");
-    const desc = document.getElementById("lightboxDescription");
-    const github = document.getElementById("lightboxGithub");
 
     toggleBtn.addEventListener("click", () => {
       more.classList.toggle("hidden");
       toggleBtn.textContent = more.classList.contains("hidden")
         ? "More Projects"
         : "Less Projects";
-    });
-
-    cards.forEach(card => {
-      card.addEventListener("click", () => {
-        title.textContent = card.dataset.title;
-        desc.textContent = card.dataset.description;
-        github.href = card.dataset.github;
-        lightbox.classList.remove("hidden");
-        document.body.classList.add("no-scroll");
-      });
-    });
-
-    closeBtn.addEventListener("click", () => {
-      lightbox.classList.add("hidden");
-      document.body.classList.remove("no-scroll");
-    });
-
-    lightbox.addEventListener("click", e => {
-      if (e.target === lightbox) {
-        lightbox.classList.add("hidden");
-        document.body.classList.remove("no-scroll");
-      }
     });
   </script>
 
