@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <header class="hero fade-in">
+  <header class="hero">
     <h1>Christian Ang</h1>
     <p class="subtitle">Mathematical Sciences & Computer Science @ CMU</p>
     <div class="links">
@@ -18,125 +18,92 @@
     </div>
   </header>
 
-  <section class="section fade-up">
-    <h2>About</h2>
-    <p>
-      I build scalable systems, cryptographic tools, and intelligent infrastructure.
-      Interested in distributed systems, optimization, mechanistic interpretability,
-      and applied cryptography.
-    </p>
-  </section>
+  <main>
 
-  <section class="section fade-up">
-    <h2>Featured Projects</h2>
+    <section class="section">
+      <h2>About</h2>
+      <p class="about-text">
+        I build scalable systems, cryptographic tools, and intelligent infrastructure.
+        Interested in distributed systems, optimization, mechanistic interpretability,
+        and applied cryptography.
+      </p>
+    </section>
 
-    <article class="project-card" tabindex="0"
-      data-title="CMIsomer"
-      data-description="Scalable event ticketing and scheduling platform used by 1000+ users at CMU. Built with React, PostgreSQL, and Go."
-      data-github="https://github.com/porkboi/CMIsomer"
-      data-paper="#">
-      <h3>CMIsomer</h3>
-      <p>Scalable event ticketing and scheduling platform used by 1000+ users at CMU. Built with React, PostgreSQL, and Go.</p>
-      <div class="project-actions">
-        <a href="https://github.com/porkboi/CMIsomer" target="_blank" rel="noreferrer" class="project-btn">GitHub</a>
+    <section class="section">
+      <h2>Featured Projects</h2>
+
+      <article class="project" tabindex="0"
+        data-title="CMIsomer"
+        data-description="Scalable event ticketing and scheduling platform used by 1000+ users at CMU. Built with React, PostgreSQL, and Go."
+        data-github="https://github.com/porkboi/CMIsomer">
+        <h3>CMIsomer</h3>
+        <p>Event ticketing & scheduling platform used by 1000+ users.</p>
+      </article>
+
+      <article class="project" tabindex="0"
+        data-title="NASA SUITS 2026"
+        data-description="Lead Algorithm Engineer developing optimized D* Lite pathfinding and Metropolis-Hastings sampling for astronaut navigation systems."
+        data-github="https://github.com/cmunasasuits">
+        <h3>NASA SUITS 2026</h3>
+        <p>Optimized pathfinding & probabilistic sampling for astronaut systems.</p>
+      </article>
+
+      <article class="project" tabindex="0"
+        data-title="ZKLib (Lean4)"
+        data-description="Implemented formally verified SNARK components in Lean4 under CMU CyLab research."
+        data-github="https://github.com/porkboi">
+        <h3>ZKLib (Lean4)</h3>
+        <p>Formally verified SNARK components in Lean4.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <button id="toggleBtn" class="toggle">More Projects</button>
+
+      <div id="moreProjects" class="hidden">
+        <article class="project" tabindex="0"
+          data-title="eSIM UART Provisioning Tool"
+          data-description="First UART provisioning tool for GSMA SGP.22/32 eSIM standards. Reverse engineered APDUs using Bus Pirate 5."
+          data-github="https://github.com/porkboi">
+          <h3>eSIM UART Provisioning Tool</h3>
+          <p>Reverse engineered APDUs & built provisioning tool.</p>
+        </article>
+
+        <article class="project" tabindex="0"
+          data-title="Post-Quantum Crypto"
+          data-description="Implemented Kyber-256, Fujisaki-Okamoto transforms, and m-LLL algorithm using Givens rotations."
+          data-github="https://github.com/porkboi">
+          <h3>Post-Quantum Crypto</h3>
+          <p>Kyber-256 & lattice algorithm implementations.</p>
+        </article>
+
+        <article class="project" tabindex="0"
+          data-title="Tahoe Embedding Model"
+          data-description="Custom contrastive learning loss and MiniLMv2-derived embedding model beating government baselines."
+          data-github="https://github.com/porkboi">
+          <h3>Tahoe Embedding Model</h3>
+          <p>Custom contrastive embedding model.</p>
+        </article>
+
+        <article class="project" tabindex="0"
+          data-title="Mars Architecture Thesis"
+          data-description="Mathematical modeling of efficient transport networks and modular housing layouts for Martian environments."
+          data-github="https://github.com/porkboi">
+          <h3>Mars Architecture</h3>
+          <p>Efficient transport network modeling for Mars.</p>
+        </article>
       </div>
-    </article>
+    </section>
 
-    <article class="project-card" tabindex="0"
-      data-title="NASA SUITS 2026"
-      data-description="Lead Algorithm Engineer developing optimized D* Lite pathfinding and Metropolis-Hastings sampling for astronaut navigation systems."
-      data-github="https://github.com/cmunasasuits"
-      data-paper="#">
-      <h3>NASA SUITS 2026</h3>
-      <p>Lead Algorithm Engineer developing optimized D* Lite pathfinding and Metropolis-Hastings sampling for astronaut navigation systems.</p>
-      <div class="project-actions">
-        <a href="https://github.com/cmunasasuits" target="_blank" rel="noreferrer" class="project-btn">GitHub</a>
-        <a href="#" class="project-btn">Paper</a>
-      </div>
-    </article>
+  </main>
 
-    <article class="project-card" tabindex="0"
-      data-title="ZKLib (Lean4)"
-      data-description="Implemented formally verified SNARK components in Lean4 under CMU CyLab research."
-      data-github="https://github.com/porkboi"
-      data-paper="#">
-      <h3>ZKLib (Lean4)</h3>
-      <p>Implemented formally verified SNARK components in Lean4 under CMU CyLab research.</p>
-      <div class="project-actions">
-        <a href="https://github.com/porkboi" target="_blank" rel="noreferrer" class="project-btn">GitHub</a>
-        <a href="#" class="project-btn">Paper</a>
-      </div>
-    </article>
-  </section>
-
-  <section class="section fade-up">
-    <button id="toggleBtn" class="toggle-btn">Show More Projects ↓</button>
-
-    <div id="moreProjects" class="hidden">
-      <article class="project-card" tabindex="0"
-        data-title="eSIM UART Provisioning Tool"
-        data-description="First UART provisioning tool for GSMA SGP.22/32 eSIM standards. Reverse engineered APDUs using Bus Pirate 5."
-        data-github="https://github.com/porkboi"
-        data-paper="#">
-        <h3>eSIM UART Provisioning Tool</h3>
-        <p>First UART provisioning tool for GSMA SGP.22/32 eSIM standards. Reverse engineered APDUs using Bus Pirate 5.</p>
-        <div class="project-actions">
-          <a href="https://github.com/porkboi" target="_blank" rel="noreferrer" class="project-btn">GitHub</a>
-          <a href="#" class="project-btn">Paper</a>
-        </div>
-      </article>
-
-      <article class="project-card" tabindex="0"
-        data-title="Post-Quantum Crypto Optimizations"
-        data-description="Implemented Kyber-256, Fujisaki-Okamoto transforms, and m-LLL algorithm using Givens rotations."
-        data-github="https://github.com/porkboi"
-        data-paper="#">
-        <h3>Post-Quantum Crypto Optimizations</h3>
-        <p>Implemented Kyber-256, Fujisaki-Okamoto transforms, and m-LLL algorithm using Givens rotations.</p>
-        <div class="project-actions">
-          <a href="https://github.com/porkboi" target="_blank" rel="noreferrer" class="project-btn">GitHub</a>
-          <a href="#" class="project-btn">Paper</a>
-        </div>
-      </article>
-
-      <article class="project-card" tabindex="0"
-        data-title="Tahoe Embedding Model"
-        data-description="Custom contrastive learning loss and MiniLMv2-derived embedding model beating government fine-tuned baselines."
-        data-github="https://github.com/porkboi"
-        data-paper="#">
-        <h3>Tahoe Embedding Model</h3>
-        <p>Custom contrastive learning loss and MiniLMv2-derived embedding model beating government fine-tuned baselines.</p>
-        <div class="project-actions">
-          <a href="https://github.com/porkboi" target="_blank" rel="noreferrer" class="project-btn">GitHub</a>
-          <a href="#" class="project-btn">Paper</a>
-        </div>
-      </article>
-
-      <article class="project-card" tabindex="0"
-        data-title="Mars Architecture Thesis"
-        data-description="Mathematical modeling of efficient transport networks and modular housing layouts for Martian environments."
-        data-github="https://github.com/porkboi"
-        data-paper="#">
-        <h3>Mars Architecture Thesis</h3>
-        <p>Mathematical modeling of efficient transport networks and modular housing layouts for Martian environments.</p>
-        <div class="project-actions">
-          <a href="https://github.com/porkboi" target="_blank" rel="noreferrer" class="project-btn">GitHub</a>
-          <a href="#" class="project-btn">Paper</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <div id="projectLightbox" class="lightbox hidden" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="lightbox-card">
-      <button id="closeLightbox" class="lightbox-close" aria-label="Close project details">×</button>
-      <p class="lightbox-label">Project</p>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden">
+    <div class="lightbox-content">
+      <button id="closeLightbox" class="close">×</button>
       <h3 id="lightboxTitle"></h3>
       <p id="lightboxDescription"></p>
-      <div class="project-actions lightbox-actions">
-        <a id="lightboxGithub" href="#" target="_blank" rel="noreferrer" class="project-btn">GitHub</a>
-        <a id="lightboxPaper" href="#" target="_blank" rel="noreferrer" class="project-btn">Paper</a>
-      </div>
+      <a id="lightboxGithub" class="lightbox-link" target="_blank">View on GitHub</a>
     </div>
   </div>
 
@@ -145,69 +112,41 @@
   </footer>
 
   <script>
-    const btn = document.getElementById("toggleBtn");
+    const toggleBtn = document.getElementById("toggleBtn");
     const more = document.getElementById("moreProjects");
-    const cards = document.querySelectorAll(".project-card");
-    const lightbox = document.getElementById("projectLightbox");
-    const closeLightboxBtn = document.getElementById("closeLightbox");
-    const lightboxTitle = document.getElementById("lightboxTitle");
-    const lightboxDescription = document.getElementById("lightboxDescription");
-    const lightboxGithub = document.getElementById("lightboxGithub");
-    const lightboxPaper = document.getElementById("lightboxPaper");
+    const cards = document.querySelectorAll(".project");
+    const lightbox = document.getElementById("lightbox");
+    const closeBtn = document.getElementById("closeLightbox");
+    const title = document.getElementById("lightboxTitle");
+    const desc = document.getElementById("lightboxDescription");
+    const github = document.getElementById("lightboxGithub");
 
-    btn.addEventListener("click", () => {
+    toggleBtn.addEventListener("click", () => {
       more.classList.toggle("hidden");
-      btn.textContent = more.classList.contains("hidden")
-        ? "Show More Projects ↓"
-        : "Show Less Projects ↑";
+      toggleBtn.textContent = more.classList.contains("hidden")
+        ? "More Projects"
+        : "Less Projects";
     });
 
-    function openLightbox(card) {
-      lightboxTitle.textContent = card.dataset.title;
-      lightboxDescription.textContent = card.dataset.description;
-      lightboxGithub.href = card.dataset.github || "#";
-      lightboxPaper.href = card.dataset.paper || "#";
-      lightbox.classList.remove("hidden");
-      document.body.classList.add("no-scroll");
-      lightbox.setAttribute("aria-hidden", "false");
-    }
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        title.textContent = card.dataset.title;
+        desc.textContent = card.dataset.description;
+        github.href = card.dataset.github;
+        lightbox.classList.remove("hidden");
+        document.body.classList.add("no-scroll");
+      });
+    });
 
-    function closeLightbox() {
+    closeBtn.addEventListener("click", () => {
       lightbox.classList.add("hidden");
       document.body.classList.remove("no-scroll");
-      lightbox.setAttribute("aria-hidden", "true");
-    }
-
-    cards.forEach((card) => {
-      card.addEventListener("click", () => openLightbox(card));
-      card.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          openLightbox(card);
-        }
-      });
     });
 
-    document.querySelectorAll(".project-actions a").forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.stopPropagation();
-        if (link.getAttribute("href") === "#") {
-          event.preventDefault();
-        }
-      });
-    });
-
-    closeLightboxBtn.addEventListener("click", closeLightbox);
-
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
-        closeLightbox();
-      }
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !lightbox.classList.contains("hidden")) {
-        closeLightbox();
+    lightbox.addEventListener("click", e => {
+      if (e.target === lightbox) {
+        lightbox.classList.add("hidden");
+        document.body.classList.remove("no-scroll");
       }
     });
   </script>
