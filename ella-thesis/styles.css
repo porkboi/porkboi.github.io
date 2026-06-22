@@ -1,0 +1,443 @@
+:root {
+  --paper: #fcfbf8;
+  --ink: #161616;
+  --smoke: #5a554d;
+  --line: rgba(22, 22, 22, 0.14);
+  --rust: #8e5f43;
+  --dome: #2b4d73;
+  --shadow: 0 24px 70px rgba(22, 22, 22, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  background: linear-gradient(180deg, #f7f3ec 0%, #ebe4d8 100%);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(143, 95, 67, 0.05));
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(22, 22, 22, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 22, 22, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 92%);
+}
+
+.hero,
+.layout {
+  position: relative;
+  z-index: 1;
+}
+
+.hero,
+.status-lightbox {
+  transition: opacity 240ms ease, transform 240ms ease, filter 240ms ease;
+}
+
+.hero.is-fading-out,
+.status-lightbox.is-fading-out {
+  opacity: 0;
+  transform: translateY(-10px);
+  filter: blur(4px);
+}
+
+.hero {
+  padding: 4.5rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
+  font-weight: 200;
+  letter-spacing: -0.05em;
+  line-height: 0.96;
+}
+
+.lede {
+  max-width: 36rem;
+  margin: 1rem auto 0;
+  color: var(--smoke);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.layout {
+  width: min(1380px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.viewer-panel {
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.is-loading #sidebarToggle,
+body.is-loading #navRow,
+body.is-loading #bookShell {
+  display: none !important;
+}
+
+.status-lightbox {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  padding: 2rem 1.5rem 1.7rem;
+  border: 1px solid rgba(22, 22, 22, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(252, 251, 248, 0.8)),
+    rgba(252, 251, 248, 0.72);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.planet-monitor {
+  width: 10rem;
+  height: 10rem;
+}
+
+.mars-graphic {
+  width: 100%;
+  height: 100%;
+}
+
+.orbit-track,
+.progress-ring {
+  fill: none;
+  stroke-width: 4;
+}
+
+.orbit-track {
+  stroke: rgba(22, 22, 22, 0.08);
+}
+
+.progress-ring {
+  stroke: var(--rust);
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transform: rotate(-90deg);
+  transform-origin: 110px 110px;
+  transition: stroke-dashoffset 220ms ease;
+}
+
+.mars-glyph {
+  transform-origin: 110px 110px;
+  animation: mars-spin 20s linear infinite;
+}
+
+.mars-body {
+  fill: #c77557;
+  stroke: rgba(83, 39, 24, 0.22);
+  stroke-width: 1.2;
+}
+
+.mars-cap {
+  fill: rgba(246, 215, 198, 0.92);
+}
+
+.mars-canyon {
+  fill: rgba(150, 73, 49, 0.74);
+}
+
+.mars-basin {
+  fill: rgba(179, 96, 67, 0.78);
+}
+
+.mars-crater {
+  fill: rgba(237, 190, 162, 0.48);
+}
+
+.status-copy {
+  text-align: center;
+}
+
+.status-pill {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.status-pill[data-state="busy"] {
+  color: var(--rust);
+}
+
+.status-pill[data-state="error"] {
+  color: #8b2c2c;
+}
+
+.status-detail {
+  margin: 0.3rem 0 0;
+  color: var(--smoke);
+  font-size: 0.95rem;
+}
+
+.source-link {
+  display: none;
+}
+
+.reader-shell {
+  margin-top: 0;
+}
+
+.sidebar-toggle {
+  appearance: none;
+  margin-bottom: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--ink);
+  width: 3.4rem;
+  height: 3.1rem;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.reader-layout {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  justify-items: stretch;
+}
+
+.chapter-sidebar {
+  width: 248px;
+  max-height: 70vh;
+  padding: 1rem;
+  border: 1px solid rgba(22, 22, 22, 0.12);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow);
+  overflow-y: auto;
+  transition: width 180ms ease, padding 180ms ease, opacity 180ms ease;
+}
+
+.chapter-sidebar[data-collapsed="true"] {
+  width: 0;
+  padding: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-width: 0;
+  box-shadow: none;
+}
+
+.sidebar-header h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.bookmark-list {
+  display: grid;
+  gap: 0.65rem;
+  padding-top: 1rem;
+}
+
+.bookmark-chip {
+  display: grid;
+  gap: 0.18rem;
+  justify-items: start;
+  padding: 1.5rem 1.5rem;
+  border: 1px solid rgba(22, 22, 22, 0.12);
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.bookmark-chip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(22, 22, 22, 0.28);
+}
+
+.bookmark-chip.is-active {
+  background: rgba(43, 77, 115, 0.12);
+  border-color: rgba(43, 77, 115, 0.28);
+}
+
+.bookmark-page {
+  color: var(--smoke);
+  font-size: 0.82rem;
+}
+
+.book-shell {
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  margin-inline: auto;
+  width: min(100%, var(--page-width, 920px));
+  min-height: calc(var(--page-height, 700px) + 2rem);
+  padding: 0 0 1.25rem;
+  background: transparent;
+  overflow: auto;
+}
+
+.book-placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 18rem;
+  color: var(--smoke);
+  text-align: center;
+}
+
+#book {
+  margin-inline: auto;
+  width: var(--page-width, 920px);
+  min-width: var(--page-width, 920px);
+  max-width: var(--page-width, 920px);
+  height: var(--page-height, 700px);
+  margin: 0;
+}
+
+.flipbook-page {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid rgba(22, 22, 22, 0.1);
+  box-shadow: 0 20px 45px rgba(22, 22, 22, 0.08);
+}
+
+.page-crop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.page-crop img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: var(--paper);
+}
+
+.page-crop[data-side="full"] img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.page-crop[data-side="left"] img,
+.page-crop[data-side="right"] img {
+  width: 200%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+}
+
+.page-crop[data-side="right"] img {
+  transform: translateX(-50%);
+}
+
+.nav-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.button {
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 0.82rem 1.2rem;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.button:hover,
+.sidebar-toggle:hover {
+  transform: translateY(-1px);
+  border-color: rgba(22, 22, 22, 0.3);
+}
+
+.button-secondary {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.icon-button,
+.zoom-button {
+  min-width: 3.25rem;
+}
+
+.icon-button {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .reader-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-sidebar {
+    width: 100%;
+    max-height: 18rem;
+  }
+
+  .chapter-sidebar[data-collapsed="true"] {
+    width: 100%;
+    max-height: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding-top: 3.8rem;
+  }
+
+  .status-lightbox {
+    padding: 1.6rem 1rem 1.35rem;
+  }
+
+  .planet-monitor {
+    width: 8.75rem;
+    height: 8.75rem;
+  }
+}
+
+@keyframes mars-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

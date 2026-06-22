@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ella Thesis Flipbook</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="is-loading">
+  <header id="hero" class="hero">
+    <h1>Ella Thesis Flipbook</h1>
+    <p class="lede">
+      Letter-scaled reading surfaces, with the first and last PDF pages kept whole and
+      interior spreads split into facing pages.
+    </p>
+  </header>
+
+  <main class="layout">
+    <section class="viewer-panel">
+      <div id="statusLightbox" class="status-lightbox" data-state="idle">
+        <div class="planet-monitor" aria-hidden="true">
+          <svg class="mars-graphic" viewBox="0 0 220 220" role="presentation">
+            <circle class="orbit-track" cx="110" cy="110" r="88"></circle>
+            <circle id="progressRing" class="progress-ring" cx="110" cy="110" r="88" pathLength="100"></circle>
+            <g class="mars-glyph">
+              <circle class="mars-body" cx="110" cy="110" r="42"></circle>
+              <path class="mars-cap" d="M82 87c12-10 37-13 55-5-8 5-14 7-28 7-12 0-19-1-27-2Z"></path>
+              <path class="mars-canyon" d="M83 112c8-10 22-16 36-16 10 0 17 2 22 5-18 2-30 6-39 14-8 7-12 15-21 20-7-5-6-15 2-23Z"></path>
+              <path class="mars-basin" d="M96 134c11-5 27-6 38-2-8 8-18 12-29 12-8 0-13-3-17-10 2 0 5 0 8 0Z"></path>
+              <circle class="mars-crater crater-a" cx="96" cy="99" r="6"></circle>
+              <circle class="mars-crater crater-b" cx="127" cy="92" r="4"></circle>
+            </g>
+          </svg>
+        </div>
+
+        <div class="status-copy">
+          <p id="statusPill" class="status-pill">Preparing the reader</p>
+          <p id="statusDetail" class="status-detail">Waiting for the PDF render.</p>
+        </div>
+
+        <a class="source-link" href="./pdf1.pdf" target="_blank">Open PDF</a>
+      </div>
+
+      <div class="reader-shell">
+        <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-expanded="false" aria-controls="chapterSidebar" aria-label="Toggle chapters" hidden>
+          <span class="toggle-icon" aria-hidden="true">&#9776;</span>
+        </button>
+
+        <div class="reader-layout">
+          <aside id="chapterSidebar" class="chapter-sidebar" data-collapsed="true">
+            <div class="sidebar-header">
+              <h2>Chapters</h2>
+            </div>
+            <div id="bookmarkList" class="bookmark-list"></div>
+          </aside>
+
+          <div id="bookShell" class="book-shell" hidden>
+            <div class="book-placeholder">
+              <p>Rendering the flipbook.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-row" id="navRow" hidden>
+        <button id="prevBtn" class="button button-secondary icon-button" type="button" aria-label="Previous page">
+          &#8592;
+        </button>
+        <button id="zoomBtn" class="button button-secondary zoom-button" type="button" aria-label="Zoom pages">
+          100%
+        </button>
+        <button id="nextBtn" class="button button-secondary icon-button" type="button" aria-label="Next page">
+          &#8594;
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="./vendor/page-flip.browser.js"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
