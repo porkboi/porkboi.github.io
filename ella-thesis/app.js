@@ -24,6 +24,7 @@ const nextBtn = document.getElementById("nextBtn");
 const zoomBtn = document.getElementById("zoomBtn");
 const navRow = document.getElementById("navRow");
 const bookShell = document.getElementById("bookShell");
+const rotateReminder = document.getElementById("rotateReminder");
 
 const defaultPdfUrl = new URL("./pdf1.pdf", window.location.href).toString();
 const chaptersJsonUrl = new URL("./chapters.json", window.location.href).toString();
@@ -86,6 +87,29 @@ function fadeOutAndRemove(element) {
   element.addEventListener("transitionend", removeElement, { once: true });
   window.setTimeout(removeElement, 320);
 }
+
+function isMobileDevice() {
+  // Check if device is mobile based on screen width and touch capability
+  return window.innerWidth < 768 || (navigator.maxTouchPoints && navigator.maxTouchPoints > 2);
+}
+
+function isPortraitOrientation() {
+  return window.innerHeight > window.innerWidth;
+}
+
+function updateRotateReminder() {
+  if (rotateReminder && rotateReminder.isConnected) {
+    const shouldShow = isMobileDevice() && isPortraitOrientation();
+    rotateReminder.hidden = !shouldShow;
+  }
+}
+
+// Listen for orientation changes
+window.addEventListener("orientationchange", updateRotateReminder);
+window.addEventListener("resize", updateRotateReminder);
+
+// Initial check
+updateRotateReminder();
 
 function finishLoadingTransition(onReady) {
   hideLightbox();

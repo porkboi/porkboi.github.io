@@ -35,6 +35,12 @@
         <div class="status-copy">
           <p id="statusPill" class="status-pill">Preparing the reader</p>
           <p id="statusDetail" class="status-detail">Waiting for the PDF render.</p>
+          <div id="rotateReminder" class="rotate-reminder" hidden>
+            <svg class="rotate-icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true">
+              <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/>
+            </svg>
+            <p class="rotate-message">Please rotate to <strong>landscape</strong> for the best experience</p>
+          </div>
         </div>
 
         <a class="source-link" href="./pdf1.pdf" target="_blank">Open PDF</a>
